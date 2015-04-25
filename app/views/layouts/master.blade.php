@@ -15,11 +15,16 @@
   </ul>
 
   <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right">
-    	<li><a href="{{ url('register') }}">Register</a></li>
-    	<li><a href="{{ url('login') }}">Login</a></li>
-    </ul>
+  	<ul class="right">
+  		@if(Auth::check())
+  			<li><a href="#">{{ Auth::user()->email }}</a></li>
+    	@else
+	   		<li><a href="{{ url('register') }}">Register</a></li>
+    		<li><a href="{{ url('login') }}">Login</a></li>
+    	@endif
+  	</ul>
+    
+    
 
     <!-- Left Nav Section -->
     <ul class="left">

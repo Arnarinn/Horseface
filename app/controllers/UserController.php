@@ -17,10 +17,27 @@ class UserController extends BaseController{
 		$validator = Validator::make(Input::all(), $rules);
 
 		if ($validator->fails()) {
-			echo 'fail';
+			
+			$messages = $validator->messages();
+
+			return Redirect::to("/register")
+				->withErrors($messages)
+				->withInput(Input::except("password", "password_confirmation"));
+
 		}
 		else{
-			echo "not fail";
+
+			$user = new User;
+
+			$user->name = Input::get("name");
+			$user->email = Input::get("email");
+			$user->password = Hash::make(Input::get("password"));
+
+			if($user->save()){
+				Auth::login($user);
+				return Redirect::to("/");
+			}
+
 		}
 	}
 }
