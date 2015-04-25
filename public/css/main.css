@@ -1,0 +1,15 @@
+.header{
+	background-color: #F26B07;
+	text-align: center;
+	margin: 0px;
+}
+.top-bar .name h1 a, .top-bar .name h2 a, .top-bar .name h3 a, .top-bar .name h4 a, .top-bar .name p a, .top-bar .name span a{
+	color: black;
+}
+.panel{
+	border: 0px;
+	border-radius: 2px;
+}
+.infoList{
+	list-style: none;
+}

@@ -1,7 +1,7 @@
 /bootstrap/compiled.php
 /vendor
 composer.phar
-
+/app/config/database.php
 .env.*.php
 .env.php
 .DS_Store
